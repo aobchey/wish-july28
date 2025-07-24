@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ลงนามถวายพระพร วันเฉลิมพระชนมพรรษา พระบาทสมเด็จพระวชิรเกล้าเจ้าอยู่หัว</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #3d6db7 50%, #2a5298 75%, #1e3c72 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .royal-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 2px, transparent 2px),
+                radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 80px 80px, 80px 80px, 60px 60px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 220, 0.95) 100%);
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(15px);
+            border: 3px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .royal-emblem {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 25px;
+            background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            animation: royalGlow 3s ease-in-out infinite alternate;
+            position: relative;
+            border: 4px solid #DAA520;
+        }
+        
+        @keyframes royalGlow {
+            from { 
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), 0 0 60px rgba(255, 215, 0, 0.2); 
+                transform: scale(1);
+            }
+            to { 
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.7), 0 0 80px rgba(255, 215, 0, 0.3); 
+                transform: scale(1.05);
+            }
+        }
+        
+        .main-title {
+            font-size: 2.2em;
+            font-weight: 800;
+            color: #1e3c72;
+            margin: 25px 0 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            line-height: 1.3;
+        }
+        
+        .royal-name {
+            font-size: 1.6em;
+            color: #8B0000;
+            font-weight: 700;
+            margin: 20px 0;
+            line-height: 1.4;
+            padding: 15px 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .date-highlight {
+            font-size: 1.8em;
+            color: #1e3c72;
+            font-weight: 800;
+            margin: 20px 0;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.2), rgba(255, 248, 220, 0.3));
+            border-radius: 15px;
+            display: inline-block;
+            border: 2px solid #ffd700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .description {
+            color: #2a5298;
+            font-size: 1.15em;
+            margin-top: 25px;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+        
+        .blessing-form {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 220, 0.9) 100%);
+            padding: 45px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            border: 3px solid #ffd700;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .guidelines {
+            background: linear-gradient(135deg, rgba(30, 60, 114, 0.1), rgba(255, 215, 0, 0.05));
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 35px;
+            border-left: 6px solid #1e3c72;
+            border-right: 6px solid #ffd700;
+        }
+        
+        .guidelines h3 {
+            color: #1e3c72;
+            font-size: 1.4em;
+            margin-bottom: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .guidelines ul {
+            color: #2a5298;
+            line-height: 1.9;
+            font-size: 1.08em;
+            font-weight: 500;
+        }
+        
+        .guidelines li {
+            margin-bottom: 8px;
+            padding-left: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 28px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 1.25em;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .required {
+            color: #dc3545;
+        }
+        
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 18px 20px;
+            font-size: 1.15em;
+            border: 3px solid #2a5298;
+            border-radius: 15px;
+            font-family: 'Sarabun', sans-serif;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+        }
+        
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .form-textarea {
+            resize: vertical;
+            min-height: 140px;
+            line-height: 1.6;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #1e3c72, #2a5298, #ffd700);
+            color: white;
+            padding: 20px 50px;
+            font-size: 1.4em;
+            font-weight: 800;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(30, 60, 114, 0.3);
+            display: block;
+            margin: 35px auto 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(30, 60, 114, 0.4);
+            background: linear-gradient(45deg, #2a5298, #1e3c72, #ffed4e);
+        }
+        
+        .submit-btn:active {
+            transform: translateY(-2px);
+        }
+        
+        .signatures-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 248, 220, 0.9) 100%);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(15px);
+            border: 3px solid #ffd700;
+        }
+        
+        .signatures-title {
+            font-size: 2em;
+            font-weight: 800;
+            color: #1e3c72;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .signatures-subtitle {
+            text-align: center;
+            color: #2a5298;
+            margin-bottom: 30px;
+            font-size: 1.15em;
+            font-weight: 600;
+        }
+        
+        .signature-count {
+            text-align: center;
+            font-size: 1.3em;
+            color: #8B0000;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding: 10px 20px;
+            background: rgba(255, 215, 0, 0.15);
+            border-radius: 10px;
+            display: inline-block;
+        }
+        
+        .signature-item {
+            padding: 20px;
+            margin: 15px 0;
+            background: linear-gradient(135deg, rgba(255, 248, 220, 0.8), rgba(255, 255, 255, 0.8));
+            border-radius: 15px;
+            border-left: 6px solid #ffd700;
+            border-right: 6px solid #1e3c72;
+            animation: fadeInUp 0.8s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .signature-name {
+            font-weight: 700;
+            color: #1e3c72;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        
+        .signature-organization {
+            color: #2a5298;
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .signature-message {
+            color: #333;
+            margin: 12px 0;
+            line-height: 1.7;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+            border-left: 4px solid #2a5298;
+        }
+        
+        .signature-time {
+            color: #8B0000;
+            font-size: 0.95em;
+            margin-top: 10px;
+            font-weight: 600;
+            text-align: right;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            color: #1e3c72;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .lotus-decoration {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 1.8em;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+        
+        .royal-blessing {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 15px;
+            color: #2a5298;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.8em;
+            }
+            
+            .royal-name {
+                font-size: 1.3em;
+            }
+            
+            .blessing-form {
+                padding: 30px 20px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .royal-emblem {
+                width: 100px;
+                height: 100px;
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="royal-pattern"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="royal-emblem">👑</div>
+            <h1 class="main-title">ลงนามถวายพระพรชัยมงคล</h1>
+            <div class="royal-name">
+                พระบาทสมเด็จพระปรเมนทรรามาธิบดีศรีสินทรมหาวชิราลงกรณ<br>
+                พระวชิรเกล้าเจ้าอยู่หัว
+            </div>
+            <h2 style="color: #2a5298; font-size: 1.3em; font-weight: 600; margin: 15px 0;">
+                เนื่องในโอกาสวันเฉลิมพระชนมพรรษา
+            </h2>
+            <div class="date-highlight">28 กรกฎาคม 2568</div>
+            <div class="description">
+                ขอเชิญชวนข้าราชการ พนักงาน และประชาชนทุกท่าน<br>
+                ร่วมลงนามถวายพระพรชัยมงคลเพื่อเป็นการแสดงออก<br>
+                ถึงความจงรักภักดีและความกตัញญูกตเวทิตา<br>
+                ต่อพระมหากรุณาธิคุณอันหาที่สุดมิได้
+            </div>
+        </div>
+        
+        <div class="blessing-form">
+            <div class="guidelines">
+                <h3>⭐ แนวทางการถวายพระพรที่เหมาะสม</h3>
+                <ul>
+                    <li>ใช้ภาษาที่สุภาพ เรียบร้อย และแสดงความเคารพอย่างสูง</li>
+                    <li>แสดงความจงรักภักดีและความกตัญญูกตเวทิตาต่อพระมหากษัตริย์</li>
+                    <li>ถวายพระพรให้ทรงพระเจริญ มีพระสุขภาพแข็งแรง</li>
+                    <li>ขอให้ทรงเป็นพระมหากษัตริย์ที่ทรงเป็นที่พึ่งของปวงชนชาวไทย</li>
+                    <li>หลีกเลี่ยงการใช้ภาษาที่ไม่เหมาะสมหรือเนื้อหาทางการเมือง</li>
+                </ul>
+            </div>
+            
+            <form id="blessingForm">
+                <div class="form-group">
+                    <label class="form-label">👤 ชื่อ - นามสกุล <span class="required">*</span></label>
+                    <input type="text" class="form-input" id="fullName" required placeholder="กรุณากรอกชื่อ-นามสกุล">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">📧 อีเมล</label>
+                    <input type="email" class="form-input" id="email" placeholder="example@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">🏢 หน่วยงาน / องค์กร / สถาบัน</label>
+                    <input type="text" class="form-input" id="organization" placeholder="กรุณาระบุหน่วยงานหรือองค์กรของท่าน">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">🙏 ข้อความถวายพระพรชัยมงคล <span class="required">*</span></label>
+                    <textarea class="form-textarea" id="blessingMessage" required placeholder="ข้าพระพุทธเจ้าขอน้อมเกล้าน้อมกระหม่อมถวายพระพรชัยมงคล..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">🙏 ลงนามถวายพระพรชัยมงคล 🙏</button>
+            </form>
+        </div>
+        
+        <div class="signatures-section">
+            <h3 class="signatures-title">📜 รายชื่อผู้ลงนามถวายพระพร</h3>
+            <div class="signatures-subtitle">
+                🙏 ขอขอบพระคุณข้าราชการ พนักงาน และประชาชนทุกท่าน<br>
+                ที่ได้ร่วมลงนามถวายพระพรในโอกาสอันเป็นมงคลนี้ 🙏
+            </div>
+            <div style="text-align: center;">
+                <div class="signature-count" id="signatureCount">จำนวนผู้ลงนาม: 0 ท่าน</div>
+            </div>
+            <div id="signaturesList">
+                <!-- รายชื่อจะแสดงที่นี่ -->
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div style="margin-bottom: 25px; font-size: 1.3em;">
+                <span class="lotus-decoration">🪷</span>
+                ขอทรงพระเจริญยิ่งยืนนาน
+                <span class="lotus-decoration">🪷</span>
+            </div>
+            <div class="royal-blessing">
+                "ข้าพระพุทธเจ้าขอน้อมเกล้าน้อมกระหม่อม<br>
+                ถวายพระพรชัยมงคลเพื่อความเป็นสิริมงคล<br>
+                แด่พระบาทสมเด็จพระปรเมนทรรามาธิบดีศรีสินทรมหาวชิราลงกรณ<br>
+                พระวชิรเกล้าเจ้าอยู่หัว"
+            </div>
+            <div style="margin-top: 30px; font-size: 1.1em; color: #8B0000; font-weight: 700;">
+                💙 ด้วยเกล้าด้วยกระหม่อม ขอเดชะ 💙
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // เก็บข้อมูลลายเซ็น
+        let signatures = [
+            {
+                name: "นายสมเด็จ รักชาติไทย",
+                message: "ข้าพระพุทธเจ้าขอน้อมเกล้าน้อมกระหม่อมถวายพระพรชัยมงคลเพื่อความเป็นสิริมงคลแด่พระบาทสมเด็จพระเจ้าอยู่หัว ขอให้พระองค์ทรงพระเจริญยิ่งยืนนาน ทรงพระสุขภาพสมบูรณ์แข็งแรง และขอให้พระองค์ทรงเป็นที่พึ่งแห่งแผ่นดินไทยตลอดไป",
+                organization: "กรมการปกครอง กระทรวงมหาดไทย",
+                time: "28 กรกฎาคม 2568 เวลา 08:30"
+            },
+            {
+                name: "นางสาวสุดา จงรักภักดี",
+                message: "ข้าพระพุทธเจ้าขอน้อมส่งความจงรักภักดีและถวายพระพรชัยมงคลเพื่อความเป็นสิริมงคลแก่พระองค์ท่าน ขอให้ทรงพระกรุณาโปรดเกล้าฯ ปกป้องรักษาแผ่นดินไทยให้มั่นคงสืบไป และขอให้พระบารมีของพระองค์ท่านทรงเป็นแสงสว่างนำทางประชาชนชาวไทยตลอดไป",
+                organization: "มหาวิทยาลัยเชียงใหม่",
+                time: "28 กรกฎาคม 2568 เวลา 07:45"
+            },
+            {
+                name: "นายอนุชา ศรีสยาม",
+                message: "ด้วยเกล้าด้วยกระหม่อม ข้าพระพุทธเจ้าขอถวายพระพรชัยมงคลแด่พระบาทสมเด็จพระเจ้าอยู่หัว เนื่องในวันเฉลิมพระชนมพรรษา ขอให้พระองค์ทรงมีพระชนมายุยิ่งยืนนาน ทรงพระราชกุศลสมบูรณ์ และขอให้พระองค์ทรงเป็นศูนย์รวมจิตใจของปวงชนชาวไทยตลอดไป",
+                organization: "โรงพยาบาลศิริราช",
+                time: "28 กรกฎาคม 2568 เวลา 09:15"
+            }
+        ];
+        
+        // อัพเดทจำนวนผู้ลงนาม
+        function updateSignatureCount() {
+            document.getElementById('signatureCount').textContent = `จำนวนผู้ลงนาม: ${signatures.length} ท่าน`;
+        }
+        
+        // แสดงรายชื่อผู้ลงนาม
+        function displaySignatures() {
+            const signaturesList = document.getElementById('signaturesList');
+            signaturesList.innerHTML = '';
+            
+            signatures.forEach((signature, index) => {
+                const signatureDiv = document.createElement('div');
+                signatureDiv.className = 'signature-item';
+                signatureDiv.style.animationDelay = `${index * 0.15}s`;
+                
+                signatureDiv.innerHTML = `
+                    <div class="signature-name">${signature.name}</div>
+                    ${signature.organization ? `<div class="signature-organization">${signature.organization}</div>` : ''}
+                    <div class="signature-message">${signature.message}</div>
+                    <div class="signature-time">${signature.time}</div>
+                `;
+                
+                signaturesList.appendChild(signatureDiv);
+            });
+            
+            updateSignatureCount();
+        }
+        
+        // จัดการการส่งฟอร์ม
+        document.getElementById('blessingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const organization = document.getElementById('organization').value.trim();
+            const blessingMessage = document.getElementById('blessingMessage').value.trim();
+            
+            if (!fullName || !blessingMessage) {
+                alert('⚠️ กรุณากรอกชื่อ-นามสกุล และข้อความถวายพระพรให้ครบถ้วน');
+                return;
+            }
+            
+            if (blessingMessage.length < 20) {
+                alert('⚠️ กรุณาเขียนข้อความถวายพระพรให้มีความยาวอย่างน้อย 20 ตัวอักษร');
+                return;
+            }
+            
+            // สร้างข้อมูลลายเซ็นใหม่
+            const now = new Date();
+            const thaiDate = now.toLocaleDateString('th-TH', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            const thaiTime = now.toLocaleTimeString('th-TH', {
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            
+            const newSignature = {
+                name: fullName,
+                message: blessingMessage,
+                organization: organization,
+                time: `${thaiDate} เวลา ${thaiTime}`
+            };
+            
+            // เพิ่มลายเซ็นใหม่ที่ด้านบน
+            signatures.unshift(newSignature);
+            
+            // แสดงรายชื่อใหม่
+            displaySignatures();
+            
+            // ล้างฟอร์ม
+            document.getElementById('blessingForm').reset();
+            
+            // แสดงข้อความขอบคุณ
+            alert('🙏 ขอพระคุณที่ท่านได้ลงนามถวายพระพรชัयมงคล\nแด่พระบาทสมเด็จพระเจ้าอยู่หัวในครั้งนี้ 🙏');
+            
+            // เลื่อนไปยังส่วนรายชื่อ
+            document.querySelector('.signatures-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            
